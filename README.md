@@ -4,9 +4,9 @@ Per far partire il progetto bisogna aver installato nel proprio ambiente di lavo
 
 Posizionarsi sulla cartella Terraform-Spark
 
-Digitare: \texttt{terraform init}
+Digitare: terraform init
 
-Digitare: \texttt{terraform apply}
+Digitare: terraform apply
 
 Connettersi alle istanze tramite il link che si trova sulla piattaforma AWS
 
@@ -24,15 +24,9 @@ $HADOOP\_HOME/sbin/mr-jobhistory-daemon.sh start historyserver
 
 ./spark/sbin/start-all.sh per far partire sull'istanza principale Spark e un worker
 
-Digitare sulle istanze secondarie: \texttt{./spark/sbin/start-slave.sh A} (dove l'address è l'indirizzo ip fornito da spark)
+Digitare sulle istanze secondarie: ./spark/sbin/start-slave.sh ADDRESS (dove l'address è l'indirizzo ip fornito da spark)
 
-Digitare: ./spark/bin/spark-submit --executor-memory 7g --driver-memory 120g  --num-executors 5 --executor-cores 7\\  --master spark://ec2-18-212-141-156.compute-
-
-1.amazonaws.com:7077 sentiment_analysis_mlspark.py
-
-
-
-
+Digitare: ./spark/bin/spark-submit --executor-memory 7g --driver-memory 120g  --num-executors 5 --executor-cores 7  --master ADDRESS (dove l'address è l'indirizzo ip fornito da spark) sentiment_analysis_mlspark.py
 
 Istruzioni per far partire la webApp su un'ulteriore istanza aws:
 
@@ -40,7 +34,7 @@ All'interno dei file del frontend, nella cartella src, occorre modificare gli IP
 
 Installare anche su questa macchina aws-cli, o creare una cartella
 
-.aws con i file \emph{config} e \emph{credentials} in modo da poter accedere ad AWS. 
+.aws con i file config e credentials in modo da poter accedere ad AWS. 
 
 
 
